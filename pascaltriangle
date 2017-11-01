@@ -1,0 +1,22 @@
+outerlist=[]
+numOfRows=10
+if len(outerlist)==0:
+    outerlist.append([1])
+
+for i in range(numOfRows):
+    lastAdded=outerlist[len(outerlist)-1]
+    newArray=[]
+    # print(lastAdded)
+
+    for x in range(len(lastAdded)):
+        if x==0:
+            newArray.append(lastAdded[i])
+
+        if x!=0 and x!=len(lastAdded):
+            newArray.append(lastAdded[x-1]+lastAdded[x])
+
+        if x==len(lastAdded)-1:
+            newArray.append(lastAdded[len(lastAdded)-1])
+    outerlist.append(newArray)
+
+print(outerlist)
